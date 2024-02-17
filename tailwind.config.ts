@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 // const withMT = require("@material-tailwind/react/utils/withMT");
 import withMT from '@material-tailwind/react/utils/withMT'
+import { default as flattenColorPalette } from "tailwindcss/lib/util/flattenColorPalette";
 
 
 
@@ -19,6 +20,20 @@ const config = withMT({
       },
     },
   },
-  plugins: [],
+  plugins: [
+    addVariablesForColors,
+  ],
 });
 export default config;
+
+// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+ 
+  addBase({
+    ":root": newVars,
+  });
+}
