@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "@material-tailwind/react": "^2.1.9",
+    "@prisma/client": "^5.9.1",
     "@tabler/icons-react": "^2.47.0",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.5",
     "next": "14.1.0",
+    "prisma": "^5.9.1",
     "react": "^18",
     "react-dom": "^18",
     "react-hot-toast": "^2.4.1",
