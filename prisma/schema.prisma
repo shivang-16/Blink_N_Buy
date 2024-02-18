@@ -10,10 +10,30 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum UserRole {
+  seller
+  customer
+}
+
 model User {
-  id Int @id @default(autoincrement())
-  name String 
-  email String @unique
-  password String
-  created_at DateTime @default(now())
+  id         String    @id @default(uuid())
+  name       String
+  email      String    @unique
+  password   String
+  role       UserRole  @default(customer)
+  avatar     Json?
+  products   Products[] // One User can have many Products
+  created_at DateTime  @default(now())
+}
+
+model Products {
+  id          String   @id @default(uuid())
+  productName String
+  category    String?
+  price       Int
+  description String?
+  image       Json?
+  created_at  DateTime @default(now())
+  userId      String   // This field links a Product to a User
+  user        User     @relation(fields: [userId], references: [id]) // This sets up the relation
 }
