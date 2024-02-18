@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
     "@material-tailwind/react": "^2.1.9",
+    "@mui/icons-material": "^5.15.10",
+    "@mui/material": "^5.15.10",
     "@prisma/client": "^5.9.1",
     "@tabler/icons-react": "^2.47.0",
+    "axios": "^1.6.7",
     "bcrypt": "^5.1.1",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.5",

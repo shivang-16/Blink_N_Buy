@@ -10,7 +10,7 @@ export default function Document() {
         <Navbar/>
         <Main />
         <NextScript />
-        <Footer/>
+        {/* <Footer/> */}
       </body>
     </Html>
   );
