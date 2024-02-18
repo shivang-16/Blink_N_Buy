@@ -6,7 +6,7 @@ import bcrypt from 'bcrypt'
 export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse,
-  ) {
+  ): Promise<void> {
     if(req.method == 'POST'){
         const { email, password } = req.body
     

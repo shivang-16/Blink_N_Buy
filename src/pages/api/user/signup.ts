@@ -8,7 +8,7 @@ export default async function handler(
     res: NextApiResponse,
   ) {
     if(req.method == 'POST'){
-        const { name, email, password } = req.body
+        const { name, email, password, role } = req.body
     
         let user = await prisma.user.findUnique({
             where: {
@@ -17,12 +17,22 @@ export default async function handler(
         })
     
         if(user) return res.status(400).json({success: false, message: "User already exists"})
-    
+
+
         const hashedPassword = await bcrypt.hash(password, 10)
+
+        const data: any = {
+            name,
+            email,
+            password: hashedPassword,
+          };
+      
+          if (role) {
+            data.role = role;
+          }
+    
         user = await prisma.user.create({
-            data: {
-                name, email, password: hashedPassword
-            }
+            data
         })
     
         sendCookie({user, res, message: "Registered sucessfully", statuscode:201})

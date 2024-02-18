@@ -6,10 +6,10 @@ interface DecodedToken {
 }
 
 export interface CustomApiRequest extends NextApiRequest {
-    userId?: string
+    userId: string
 }
 
-const isAuthenticated = async(req: CustomApiRequest, res:NextApiResponse, next: () => void) => {
+const isAuthenticated = async(req: CustomApiRequest, res:NextApiResponse, next: () => void): Promise<void | null> => {
   const tokenCookie = req.headers.cookie?.split(';').find((cookie) => cookie.trim().startsWith('token='));
 
   if (!tokenCookie) {
@@ -20,11 +20,9 @@ const isAuthenticated = async(req: CustomApiRequest, res:NextApiResponse, next: 
 
   try {
     const decodedToken = await jwt.verify(token, 'process.env.JWT_SECRET') as DecodedToken;
-console.log(decodedToken)
     req.userId = decodedToken._id
     next()
   } catch (error) {
-    // Handle token verification failure
     console.error('Error verifying token:', error);
     return null;
   }
