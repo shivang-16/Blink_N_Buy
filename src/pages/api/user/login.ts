@@ -7,6 +7,7 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse,
   ): Promise<void> {
+   try {
     if(req.method == 'POST'){
         const { email, password } = req.body
     
@@ -25,6 +26,10 @@ export default async function handler(
         res.status(400).json({success: false, message: "Request not allowed"})
 
     }
+   } catch (error) {
+    return res.status(500).json({ success: false, message: "Internal server error"});
+
+   }
     
   }
   

@@ -7,6 +7,7 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse,
   ) {
+  try {
     if(req.method == 'POST'){
         const { name, email, password, role } = req.body
     
@@ -41,5 +42,9 @@ export default async function handler(
 
     }
     
+  } catch (error) {
+    return res.status(500).json({ success: false, message: "Internal server error"});
+
+  }
   }
   
