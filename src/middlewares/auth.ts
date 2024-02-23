@@ -1,31 +1,42 @@
-import jwt from 'jsonwebtoken';
-import { NextApiRequest, NextApiResponse } from 'next';
+import jwt from "jsonwebtoken";
+import { NextApiRequest, NextApiResponse } from "next";
 
 interface DecodedToken {
-    _id: string
+  _id: string;
 }
 
 export interface CustomApiRequest extends NextApiRequest {
-    userId: string
+  userId: string;
 }
 
-const isAuthenticated = async(req: CustomApiRequest, res:NextApiResponse, next: () => void): Promise<void | null> => {
-  const tokenCookie = req.headers.cookie?.split(';').find((cookie) => cookie.trim().startsWith('token='));
+const isAuthenticated = async (
+  req: CustomApiRequest,
+  res: NextApiResponse,
+  next: () => void,
+): Promise<void | null> => {
+  const tokenCookie = req.headers.cookie
+    ?.split(";")
+    .find((cookie) => cookie.trim().startsWith("token="));
 
   if (!tokenCookie) {
-    return res.status(400).json({success: false, message: "Login into your account"}); 
+    return res
+      .status(400)
+      .json({ success: false, message: "Login into your account" });
   }
 
-  const token = tokenCookie.split('=')[1];
+  const token = tokenCookie.split("=")[1];
 
   try {
-    const decodedToken = await jwt.verify(token, 'process.env.JWT_SECRET') as DecodedToken;
-    req.userId = decodedToken._id
-    next()
+    const decodedToken = (await jwt.verify(
+      token,
+      "process.env.JWT_SECRET",
+    )) as DecodedToken;
+    req.userId = decodedToken._id;
+    next();
   } catch (error) {
-    console.error('Error verifying token:', error);
+    console.error("Error verifying token:", error);
     return null;
   }
 };
 
-export default isAuthenticated
+export default isAuthenticated;

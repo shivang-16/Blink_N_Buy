@@ -47,82 +47,82 @@ table {
 .react-datepicker-popper {
   z-index: 100000 !important;
 }
-.drawable-icon{
+.drawable-icon {
   position: absolute;
   margin: auto;
   z-index: 1000;
 }
-.input-wrap{
+.input-wrap {
   position: relative;
 }
-option{
+option {
   color: #000;
 }
-.table-wrap{
+.table-wrap {
   overflow: auto;
 }
-input:focus{
-  outline:none;
+input:focus {
+  outline: none;
 }
-.ReactModal__Body--open{
+.ReactModal__Body--open {
   overflow: hidden;
 }
-  .slider-indicator:first-child {
-    margin-left: 0;
+.slider-indicator:first-child {
+  margin-left: 0;
 }
 
 .slider-indicator:last-child {
-margin-right: 0;
+  margin-right: 0;
 }
 
-.rc-drawer-content-wrapper{
+.rc-drawer-content-wrapper {
   width: 100% !important;
 }
-.rc-drawer-right .rc-drawer-content-wrapper{
+.rc-drawer-right .rc-drawer-content-wrapper {
   display: flex;
   justify-content: flex-end;
 }
-.rc-drawer-left .rc-drawer-content-wrapper{
+.rc-drawer-left .rc-drawer-content-wrapper {
   display: flex;
   justify-content: flex-start;
 }
-.ReactModal__Overlay{
+.ReactModal__Overlay {
   z-index: 1051;
 }
 
-ul li a{
+ul li a {
   display: block;
 }
 
-.mobile-menu div{
+.mobile-menu div {
   height: 1.5px;
   width: 20px;
   background-color: #000;
-  margin:4px 0;
+  margin: 4px 0;
 }
 .mobile-menu {
   display: none;
   cursor: pointer;
 }
-.header-row{
-  align-items:center;
+.header-row {
+  align-items: center;
   justify-content: space-between;
   display: flex;
 }
-@media only screen and (min-width: 200px) and (max-width: 767px)  {
+@media only screen and (min-width: 200px) and (max-width: 767px) {
   .mobile-menu {
     display: block;
   }
-  .header-row{
+  .header-row {
     width: 100% !important;
   }
-  .display-block{
+  .display-block {
     display: block;
   }
-  .display-none{
+  .display-none {
     display: none;
   }
-  .common-row-list > ul{
+  .common-row-list > ul {
     padding-left: 10px;
     padding-right: 10px;
     flex-wrap: wrap;
@@ -133,7 +133,7 @@ ul li a{
   right: 16px;
   top: 16px;
 }
-.menu-overlay{
+.menu-overlay {
   width: 100%;
   height: 100%;
   background-color: #000;
@@ -142,26 +142,27 @@ ul li a{
   left: 0px;
   top: 0px;
 }
-.close-line1{
-  transform: translate(0, 6px) rotate(-45deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
+.close-line1 {
+  transform: translate(0, 6px) rotate(-45deg) skewX(0) skewY(0) scaleX(1)
+    scaleY(1);
 }
-.close-line2{
+.close-line2 {
   transform: translate(0, 0) rotate(45deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
 }
-.common-row-list > ul{
+.common-row-list > ul {
   display: flex;
   flex-direction: row;
   list-style-type: none;
   flex-grow: 1;
 }
 
-.common-column-list > ul{
+.common-column-list > ul {
   display: flex;
   flex-direction: column;
   list-style-type: none;
 }
 
-.common-column-list li{
+.common-column-list li {
   width: 100%;
 }
 

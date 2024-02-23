@@ -1,6 +1,35 @@
-
- @font-face { font-display: swap; font-style : normal; src: url("../../public/assets/fonts/PoppinsBold.ttf"); font-family : "Poppins"; font-weight : 700;  }
- @font-face { font-display: swap; font-style : normal; src: url("../../public/assets/fonts/PoppinsMedium.ttf"); font-family : "Poppins"; font-weight : 500;  }
- @font-face { font-display: swap; font-style : normal; src: url("../../public/assets/fonts/PoppinsRegular.ttf"); font-family : "Poppins"; font-weight : 400;  }
- @font-face { font-display: swap; font-style : normal; src: url("../../public/assets/fonts/PlayfairDisplayBold.ttf"); font-family : "Playfair Display"; font-weight : 700;  }
- @font-face { font-display: swap; font-style : normal; src: url("../../public/assets/fonts/PlayfairDisplayRegular.ttf"); font-family : "Playfair Display"; font-weight : 400;  }
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("../../public/assets/fonts/PoppinsBold.ttf");
+  font-family: "Poppins";
+  font-weight: 700;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("../../public/assets/fonts/PoppinsMedium.ttf");
+  font-family: "Poppins";
+  font-weight: 500;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("../../public/assets/fonts/PoppinsRegular.ttf");
+  font-family: "Poppins";
+  font-weight: 400;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("../../public/assets/fonts/PlayfairDisplayBold.ttf");
+  font-family: "Playfair Display";
+  font-weight: 700;
+}
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url("../../public/assets/fonts/PlayfairDisplayRegular.ttf");
+  font-family: "Playfair Display";
+  font-weight: 400;
+}

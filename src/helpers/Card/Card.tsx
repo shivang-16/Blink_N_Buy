@@ -1,21 +1,19 @@
-import React from 'react'
-import { CardContainer, CardBody, CardItem } from '../../components/ui/3DCard'
-import Image from 'next/image'
+import React from "react";
+import { CardContainer, CardBody, CardItem } from "../../components/ui/3DCard";
+import Image from "next/image";
 
 type props = {
-    img_src: string
-    product: string
-    price: string
-    catagory?: string
-    description?: string
+  img_src: string;
+  product: string;
+  price: string;
+  catagory?: string;
+  description?: string;
+};
 
-}
-
-const Card = ({img_src, catagory, product, price, description}: props) => {
+const Card = ({ img_src, catagory, product, price, description }: props) => {
   return (
     <CardContainer className="inter-var m-5 ">
       <CardBody className="relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black border-black/[0.1] w-auto sm:w-[20rem] h-auto cursor-pointer p-3  rounded-xl">
-    
         <CardItem translateZ="100" className="w-full ">
           <Image
             src={img_src}
@@ -24,7 +22,6 @@ const Card = ({img_src, catagory, product, price, description}: props) => {
             className="h-40 object-cover object-top w-full rounded-xl group-hover/card:shadow-xl"
             alt="thumbnail"
           />
-          
         </CardItem>
         <CardItem
           as="p"
@@ -33,7 +30,7 @@ const Card = ({img_src, catagory, product, price, description}: props) => {
         >
           {catagory}
         </CardItem>
-          <CardItem
+        <CardItem
           translateZ="50"
           className="text-xl font-bold text-neutral-600 dark:text-white"
         >
@@ -52,7 +49,7 @@ const Card = ({img_src, catagory, product, price, description}: props) => {
         >
           {price}
         </CardItem>
-    
+
         <div className="flex justify-between items-center mt-5">
           <CardItem
             translateZ={20}
@@ -71,8 +68,7 @@ const Card = ({img_src, catagory, product, price, description}: props) => {
         </div>
       </CardBody>
     </CardContainer>
-  
-  )
-}
+  );
+};
 
-export default Card
+export default Card;
