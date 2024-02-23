@@ -22,12 +22,23 @@ import MiniFooter from "@/components/miniFooter";
 import CustomisedCarousel from "@/components/CustomisedCarousel";
 import HomePage from "@/components/Home";
 import Navbar from "@/components/navbar";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { getUser } from "@/redux/actions/userAction";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const sliderRef = useRef(null);
   const [sliderState, setsliderState] = useState(0);
+  const { isAuthenticated } = useAppSelector((state) => state?.user);
+  const dispatch = useAppDispatch()
+
+
+   useEffect(() => {
+    dispatch(getUser()) 
+    },[dispatch])
+  
+
 
   return (
     <>

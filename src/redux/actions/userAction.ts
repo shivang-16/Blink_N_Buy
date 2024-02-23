@@ -11,6 +11,9 @@ import {
   getLogoutRequest,
   getLogoutSuccess,
   getLogoutFail,
+  getUserRequest,
+  getUserSuccess,
+  getUserFail,
 } from "../slices/userSlice";
 import { AppDispatch } from "../store";
 import toast from "react-hot-toast";
@@ -82,10 +85,26 @@ export const login =
     }
   };
 
+  export const getUser = () => async (dispatch: AppDispatch) => {
+    try {
+      dispatch(getUserRequest());
+      const { data } = await axios.get(`${server}/api/user/getUser`, {
+        withCredentials: true,
+      });
+  
+      dispatch(getUserSuccess(data?.user));
+    } catch (error: any) {
+      console.log(error);
+      dispatch(getUserFail(error.response.data.message));
+  
+    }
+  };
+
+  
 export const logout = () => async (dispatch: AppDispatch) => {
   try {
     dispatch(getLogoutRequest());
-    const { data } = await axios.post(`${server}/api/user/logout`, {
+    const { data } = await axios.get(`${server}/api/user/logout`, {
       withCredentials: true,
     });
 
