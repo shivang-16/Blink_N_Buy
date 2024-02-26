@@ -1,3 +1,4 @@
+import { CustomApiRequest } from "@/types/global";
 import jwt from "jsonwebtoken";
 import { NextApiRequest, NextApiResponse } from "next";
 
@@ -5,9 +6,6 @@ interface DecodedToken {
   _id: string;
 }
 
-export interface CustomApiRequest extends NextApiRequest {
-  userId: string;
-}
 
 const isAuthenticated = async (
   req: CustomApiRequest,

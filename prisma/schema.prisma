@@ -33,12 +33,17 @@ model Products {
   category    String?
   price       Int
   description String?
-  image       Json?
+  image       Image[]
   created_at  DateTime @default(now())
   userId      String
   user        User     @relation(fields: [userId], references: [id])
 }
 
+model Image {
+    id        String   @id @default(uuid())
+    productId String
+    product   Products  @relation(fields: [productId], references: [id])
+}
 model CartItem {
   id        String   @id @default(uuid())
   productId String

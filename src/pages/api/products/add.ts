@@ -1,6 +1,7 @@
 import prisma from "@/db/db";
 import { NextApiRequest, NextApiResponse } from "next";
-import isAuthenticated, { CustomApiRequest } from "@/middlewares/auth";
+import isAuthenticated from "@/middlewares/auth";
+import { CustomApiRequest } from "@/types/global";
 
 export default async function handler(
   req: CustomApiRequest,
@@ -22,6 +23,10 @@ export default async function handler(
             .status(400)
             .json({ success: false, message: "You are not allowed" });
 
+
+        //uploading the products images 
+        // const files = req.files
+        
         const product = await prisma.products.createMany({
           data: products.map((product: any) => ({
             ...product,

@@ -1,4 +1,5 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { UserState, UserType } from "@/types/global";
+import { PayloadAction, Slice, createSlice } from "@reduxjs/toolkit";
 
 const initialState: UserState = {
   loading: false,
@@ -9,7 +10,7 @@ const initialState: UserState = {
   isAuthenticated: false,
 };
 
-export const userSlice = createSlice({
+export const userSlice: Slice = createSlice({
   name: "User",
   initialState,
   reducers: {
