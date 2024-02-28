@@ -1,6 +1,6 @@
-import prisma from "@/db/db";
+import prisma from "@/backend/db/db";
 import { NextApiRequest, NextApiResponse } from "next";
-import sendCookie from "@/utils/sendCookie";
+import sendCookie from "@/backend/utils/sendCookie";
 import bcrypt from "bcrypt";
 
 export default async function handler(
