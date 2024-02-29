@@ -1,9 +1,13 @@
+import { ProductType } from "@/types/global";
+import axios from "axios";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect } from "react";
 
-const Product = () => {
+const Product = (props:{product: ProductType}) => {
   const router = useRouter();
   console.log(router);
+  console.log("helelooo", props)
+
   return (
     <>
       <section className="text-gray-600 body-font overflow-hidden">
@@ -12,14 +16,14 @@ const Product = () => {
             <img
               alt="ecommerce"
               className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
-              src="https://dummyimage.com/400x400"
+              src="images/img_placeholder_3.png"
             />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
               <h2 className="text-sm title-font text-gray-500 tracking-widest">
-                {router.query.slug}
+                {props.product?.category}
               </h2>
               <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
-                The Catcher in the Rye
+              {props.product?.productName}
               </h1>
               <div className="flex mb-4">
                 <span className="flex items-center">
@@ -161,7 +165,7 @@ const Product = () => {
               </div>
               <div className="flex">
                 <span className="title-font font-medium text-2xl text-gray-900">
-                  $58.00
+                ${props.product?.price}
                 </span>
                 <button className="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
                   Button
@@ -185,6 +189,25 @@ const Product = () => {
       </section>
     </>
   );
+};
+
+export const getServerSideProps = async (context: { params: { slug: string; }; }) => {
+  try {
+    const { slug } = context.params;
+    const response = await axios.get(`http://localhost:3000/api/products/${slug}`);
+    return {
+      props: {
+        product: response.data.product,
+      },
+    };
+  } catch (error) {
+    console.error('Failed to fetch data:', error);
+    return {
+      props: {
+        error: 'Failed to load the data.',
+      },
+    };
+  }
 };
 
 export default Product;

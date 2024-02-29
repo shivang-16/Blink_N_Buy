@@ -11,8 +11,10 @@ export default function Document() {
       <Html lang="en">
         <Head />
         <body>
+          <div className="min-h-screen">
           <Main />
           <NextScript />
+          </div>
           <Footer1 className="bg-gray-800 flex items-center justify-center max-[720px]:px-5 w-full" />
           <Toaster />
         </body>
