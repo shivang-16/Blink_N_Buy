@@ -7,7 +7,13 @@ export default async function handler(
 ): Promise<void> {
   try {
     if (req.method == "GET") {
-      const products = await prisma.products.findMany();
+      const {category} = req.query
+      const categoryFilter = typeof category === 'string' ? { category } : {};
+
+      const products = await prisma.products.findMany({
+        where: categoryFilter,
+      });
+
       res.status(200).json({ success: true, products });
     } else {
       return res
