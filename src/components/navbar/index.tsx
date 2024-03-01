@@ -46,6 +46,13 @@ const Navbar = () => {
                 src="images/img_car_24X80.svg"
                 alt="car"
               />
+              <Link href={`/${isAuthenticated ? "cart" : ""}`}>
+                <Text
+                  className="cursor-pointer font-bold leading-[normal] text-black ml-8 max-[720px]:ml-[0] text-center text-sm w-[107px]"
+                >
+                  {isAuthenticated ? "Cart" : "Cart"}
+                </Text>
+              </Link>
               <Link href={`/${isAuthenticated ? "" : "login"}`}>
                 <Button
                   className="cursor-pointer font-bold leading-[normal] ml-8 max-[720px]:ml-[0] text-center text-sm w-[107px]"

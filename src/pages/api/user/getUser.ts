@@ -1,7 +1,7 @@
 import prisma from "@/backend/db/db";
 import { NextApiRequest, NextApiResponse } from "next";
-import isAuthenticated, { CustomApiRequest } from "@/backend/middlewares/auth";
-
+import isAuthenticated from "@/backend/middlewares/auth";
+import { CustomApiRequest } from "@/types/global";
 export default async function handler(
   req: CustomApiRequest,
   res: NextApiResponse,

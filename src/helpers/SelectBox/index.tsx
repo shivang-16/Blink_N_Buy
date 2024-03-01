@@ -44,7 +44,7 @@ const SelectBox = React.forwardRef<any, SelectProps>(
   ) => {
     const [selectedVal, setSelectedVal] = React.useState(value);
 
-    const handleChange = (data) => {
+    const handleChange = (data: React.SetStateAction<string>) => {
       setSelectedVal(data);
       if (isMulti) {
         onChange?.(data?.map((d) => d.value) || []);
@@ -121,7 +121,7 @@ const SelectBox = React.forwardRef<any, SelectProps>(
             }),
             menuPortal: (base) => ({ ...base, zIndex: 999999 }),
           }}
-          menuPortalTarget={document.body}
+          // menuPortalTarget={document.body}
           closeMenuOnScroll={(event: any) => {
             return event.target.id === "scrollContainer";
           }}

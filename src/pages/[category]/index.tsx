@@ -71,7 +71,12 @@ const Category = (props:any) => {
       alt: "phone"
     },
   ]
-
+  const sortOptionsList = [
+    { label: "Option1", value: "option1" },
+    { label: "Option2", value: "option2" },
+    { label: "Option3", value: "option3" },
+  ];
+  
 
   return (
     <>
@@ -150,14 +155,14 @@ const Category = (props:any) => {
                 </div>
               </div>
               <Line className="bg-bluegray-100 h-px mt-8 w-full" />
-              <div className="flex flex-col gap-8 items-start justify-start mt-[37px] w-[68%] max-[720px]:w-full">
+              <div className="flex flex-col gap-8 items-start justify-start mt-[37px] w-[68%] max-[720px]:w-full mb-12">
                 <Text
                   className="text-gray-800 text-lg"
                   size="txtPoppinsMedium18"
                 >
                   Filter by Price
                 </Text>
-                <div className="flex flex-col gap-6 items-start justify-start w-auto">
+                <div className="flex flex-col gap-6 items-start justify-start w-auto text-black">
                   <CheckBox
                     className="leading-[normal] text-left text-lg"
                     inputClassName="h-6 mr-[5px] w-6"
@@ -165,23 +170,7 @@ const Category = (props:any) => {
                     id="AllPrice"
                     label="All Price"
                   ></CheckBox>
-                  <div className="flex flex-row gap-4 items-center justify-start w-[87%] max-[720px]:w-full">
-                    <Button
-                      className="flex h-6 items-center justify-center w-6"
-                      shape="square"
-                      color="gray_800"
-                      size="xs"
-                      variant="fill"
-                    >
-                      <Img src="images/img_checkedbox.svg" alt="Checkedbox" />
-                    </Button>
-                    <Text
-                      className="text-gray-800 text-lg"
-                      size="txtPoppinsRegular18Gray800"
-                    >
-                      $100 - $250
-                    </Text>
-                  </div>
+         
                   <CheckBox
                     className="leading-[normal] text-left text-lg"
                     inputClassName="h-6 mr-[5px] w-6"
@@ -205,114 +194,8 @@ const Category = (props:any) => {
                   ></CheckBox>
                 </div>
               </div>
-              <Line className="bg-bluegray-100 h-px mt-8 w-full" />
-              <div className="flex flex-col gap-8 items-start justify-start mt-[37px] w-[79%] max-[720px]:w-full">
-                <Text
-                  className="text-gray-800 text-lg"
-                  size="txtPoppinsMedium18"
-                >
-                  Filter by Rating
-                </Text>
-                <div className="flex flex-col gap-4 items-start justify-start w-auto">
-                  <div className="flex flex-row gap-4 items-center justify-start w-[34%] max-[720px]:w-full">
-                    <div className="border-[3px] border-bluegray-100 border-solid h-6 w-6"></div>
-                    <Img
-                      className="h-6 w-6"
-                      src="images/img_star1_3.svg"
-                      alt="StarOne"
-                    />
-                  </div>
-                  <div className="flex flex-row gap-4 items-center justify-start w-1/2 max-[720px]:w-full">
-                    <div className="border-[3px] border-bluegray-100 border-solid h-6 w-6"></div>
-                    <div className="flex flex-row gap-2 items-start justify-start w-auto">
-                      <Img
-                        className="h-6 w-6"
-                        src="images/img_star1_4.svg"
-                        alt="StarOne One"
-                      />
-                      <Img
-                        className="h-6 w-6"
-                        src="images/img_star2_2.svg"
-                        alt="StarTwo"
-                      />
-                    </div>
-                  </div>
-                  <div className="flex flex-row gap-4 items-center justify-start w-[67%] max-[720px]:w-full">
-                    <div className="border-[3px] border-bluegray-100 border-solid h-6 w-6"></div>
-                    <div className="flex flex-row gap-2 items-start justify-start w-auto">
-                      <Img
-                        className="h-6 w-6"
-                        src="images/img_star1_5.svg"
-                        alt="StarOne Two"
-                      />
-                      <Img
-                        className="h-6 w-6"
-                        src="images/img_star2_3.svg"
-                        alt="StarTwo One"
-                      />
-                      <Img
-                        className="h-6 w-6"
-                        src="images/img_star3_1.svg"
-                        alt="StarThree"
-                      />
-                    </div>
-                  </div>
-                  <List
-                    className="flex flex-col gap-4 items-center w-full"
-                    orientation="vertical"
-                  >
-                    <div className="flex max-[720px]:flex-1 flex-row gap-4 items-center justify-start w-[84%] max-[720px]:w-full">
-                      <Button
-                        className="flex h-6 items-center justify-center w-6"
-                        shape="square"
-                        color="gray_800"
-                        size="xs"
-                        variant="fill"
-                      >
-                        <Img
-                          src="images/img_checkedbox.svg"
-                          alt="Checkedbox One"
-                        />
-                      </Button>
-                      <div className="flex flex-row gap-2 items-start justify-start w-auto">
-                        <Img
-                          className="h-6 w-6"
-                          src="images/img_star1_6.svg"
-                          alt="StarOne Three"
-                        />
-                        <Img
-                          className="h-6 w-6"
-                          src="images/img_star2_4.svg"
-                          alt="StarTwo Two"
-                        />
-                        <Img
-                          className="h-6 w-6"
-                          src="images/img_star3_2.svg"
-                          alt="StarThree One"
-                        />
-                        <Img
-                          className="h-6 w-6"
-                          src="images/img_star5_24X24.svg"
-                          alt="StarFive"
-                        />
-                      </div>
-                    </div>
-                    <div className="flex flex-1 flex-row gap-4 items-center justify-between w-full">
-                      <div className="border-[3px] border-bluegray-100 border-solid h-6 w-6"></div>
-                      <div className="flex flex-row items-start justify-start w-auto">
-                        {/* <RatingBar
-                        className="flex justify-between w-[152px]"
-                        value={5}
-                        starCount={5}
-                        activeColor="#fae952"
-                        size={24}
-                      ></RatingBar> */}
-                      </div>
-                    </div>
-                  </List>
-                </div>
               </div>
-            </div>
+              {/* <Line className="bg-bluegray-100 h-px mt-8 w-full" /> */}
             <div className="flex max-[720px]:flex-1 flex-col gap-8 items-center justify-start w-[84%] max-[720px]:w-full">
               <div className="flex max-[540px]:flex-col flex-row max-[720px]:gap-10 items-start justify-between pt-0.5 w-full">
                 <Text
@@ -337,7 +220,7 @@ const Category = (props:any) => {
                     product
                   </span>
                 </Text>
-                {/* <SelectBox
+                <SelectBox
                 className="max-[540px]:flex-1 leading-[normal] text-gray-500 text-left text-lg w-[18%] max-[540px]:w-full"
                 placeholderClassName="text-gray-500"
                 indicator={
@@ -353,7 +236,7 @@ const Category = (props:any) => {
                 isSearchable={false}
                 placeholder="Sort by: Newest Items"
                 size="xs"
-              /> */}
+              />
               </div>
               <div className="common-pointer flex flex-col gap-14 items-center justify-start w-full">
                 <div className="flex flex-col items-center justify-start w-full">
